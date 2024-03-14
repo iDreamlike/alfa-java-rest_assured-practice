@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ClientRequest {
+public class BookRequest {
 
-    private String clientName;
-    private String clientEmail;
-
+    private int bookId;
+    private String customerName;
 }
