@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.alfabank'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.4.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.16.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.16.2'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    useJUnitPlatform()
+}
