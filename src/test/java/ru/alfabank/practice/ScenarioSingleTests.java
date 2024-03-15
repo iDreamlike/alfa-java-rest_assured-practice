@@ -1,4 +1,4 @@
-package ru.alfabank;
+package ru.alfabank.practice;
 
 import org.junit.jupiter.api.Test;
 

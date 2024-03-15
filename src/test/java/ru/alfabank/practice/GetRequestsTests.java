@@ -1,4 +1,4 @@
-package ru.alfabank;
+package ru.alfabank.practice;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

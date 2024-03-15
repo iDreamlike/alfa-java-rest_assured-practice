@@ -1,4 +1,4 @@
-package ru.alfabank;
+package ru.alfabank.practice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
