@@ -1,0 +1,159 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "default": [],
+    "title": "Root Schema",
+    "items": {
+        "type": "object",
+        "title": "A Schema",
+        "required": [
+            "userId",
+            "id",
+            "title"
+        ],
+        "properties": {
+            "userId": {
+                "type": "integer",
+                "title": "The userId Schema",
+                "examples": [
+                    1
+                ]
+            },
+            "id": {
+                "type": "integer",
+                "title": "The id Schema",
+                "examples": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                ]
+            },
+            "title": {
+                "type": "string",
+                "title": "The title Schema",
+                "examples": [
+                    "quidem molestiae enim",
+                    "sunt qui excepturi placeat culpa",
+                    "omnis laborum odio",
+                    "non esse culpa molestiae omnis sed optio",
+                    "eaque aut omnis a",
+                    "natus impedit quibusdam illo est",
+                    "quibusdam autem aliquid et et quia",
+                    "qui fuga est a eum",
+                    "saepe unde necessitatibus rem",
+                    "distinctio laborum qui"
+                ]
+            }
+        },
+        "examples": [{
+            "userId": 1,
+            "id": 1,
+            "title": "quidem molestiae enim"
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "sunt qui excepturi placeat culpa"
+        },
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "omnis laborum odio"
+        },
+        {
+            "userId": 1,
+            "id": 4,
+            "title": "non esse culpa molestiae omnis sed optio"
+        },
+        {
+            "userId": 1,
+            "id": 5,
+            "title": "eaque aut omnis a"
+        },
+        {
+            "userId": 1,
+            "id": 6,
+            "title": "natus impedit quibusdam illo est"
+        },
+        {
+            "userId": 1,
+            "id": 7,
+            "title": "quibusdam autem aliquid et et quia"
+        },
+        {
+            "userId": 1,
+            "id": 8,
+            "title": "qui fuga est a eum"
+        },
+        {
+            "userId": 1,
+            "id": 9,
+            "title": "saepe unde necessitatibus rem"
+        },
+        {
+            "userId": 1,
+            "id": 10,
+            "title": "distinctio laborum qui"
+        }]
+    },
+    "examples": [
+        [{
+            "userId": 1,
+            "id": 1,
+            "title": "quidem molestiae enim"
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "sunt qui excepturi placeat culpa"
+        },
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "omnis laborum odio"
+        },
+        {
+            "userId": 1,
+            "id": 4,
+            "title": "non esse culpa molestiae omnis sed optio"
+        },
+        {
+            "userId": 1,
+            "id": 5,
+            "title": "eaque aut omnis a"
+        },
+        {
+            "userId": 1,
+            "id": 6,
+            "title": "natus impedit quibusdam illo est"
+        },
+        {
+            "userId": 1,
+            "id": 7,
+            "title": "quibusdam autem aliquid et et quia"
+        },
+        {
+            "userId": 1,
+            "id": 8,
+            "title": "qui fuga est a eum"
+        },
+        {
+            "userId": 1,
+            "id": 9,
+            "title": "saepe unde necessitatibus rem"
+        },
+        {
+            "userId": 1,
+            "id": 10,
+            "title": "distinctio laborum qui"
+        }]
+    ]
+}
