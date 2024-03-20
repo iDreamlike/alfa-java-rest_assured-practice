@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class OrderResponse {
-    private boolean created;
+    private Boolean created;
     private String orderId;
 }

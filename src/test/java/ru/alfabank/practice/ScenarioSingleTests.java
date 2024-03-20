@@ -35,18 +35,16 @@ public class ScenarioSingleTests {
                 .body("status", Matchers.equalTo("OK"));
 
         // ========= Register client ===================================================================================
-        ClientRequest request = new ClientRequest("Сергей",
+        ClientRequest clientRequest = new ClientRequest("Сергей",
                 RandomStringUtils.randomAlphabetic(10) + "@mail.ru");
         ClientResponse clientResponse = spec
-                .body(request)
+                .body(clientRequest)
                 .when()
                 .post("/api-clients")
                 .then()
-//                .log().all()
                 .statusCode(201)
                 .extract()
                 .as(ClientResponse.class);
-//        System.out.println(clientResponse);
 
         // ========= Get list of books =================================================================================
         spec
@@ -58,17 +56,13 @@ public class ScenarioSingleTests {
         // ========= Check book availability ===========================================================================
         String bookId = "1";
         spec
-//                .queryParam("name", "sergei")
-//                .queryParam("la", "123")
                 .when()
                 .get("/books/" + bookId)
                 .then()
-//                .log().all()
                 .statusCode(200)
                 .body("available", Matchers.equalTo(true));
 
         // ========= Order selected book ===============================================================================
-        ClientRequest clientRequest = new ClientRequest("Сергей", "mail1@mail.ru");
         OrderRequest orderRequest = new OrderRequest(1, clientRequest.getClientName());
         OrderResponse orderResponse = spec
                 .body(orderRequest)
