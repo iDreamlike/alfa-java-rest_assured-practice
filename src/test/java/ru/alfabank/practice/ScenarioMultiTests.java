@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -46,11 +47,10 @@ public class ScenarioMultiTests {
     }
 
 
-
     private static RequestSpecification spec;
 
-    @BeforeAll
-    static void init() {
+    @BeforeEach
+    void init() {
         spec = RestAssured.given()
                 .baseUri("https://simple-books-api.glitch.me")
                 .contentType(ContentType.JSON);
