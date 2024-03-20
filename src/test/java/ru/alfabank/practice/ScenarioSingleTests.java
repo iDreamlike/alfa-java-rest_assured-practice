@@ -37,14 +37,16 @@ public class ScenarioSingleTests {
         // ========= Register client ===================================================================================
         ClientRequest request = new ClientRequest("Сергей",
                 RandomStringUtils.randomAlphabetic(10) + "@mail.ru");
-        ClientResponse response = spec
+        ClientResponse clientResponse = spec
                 .body(request)
                 .when()
                 .post("/api-clients")
                 .then()
+//                .log().all()
                 .statusCode(201)
                 .extract()
                 .as(ClientResponse.class);
+//        System.out.println(clientResponse);
 
         // ========= Get list of books =================================================================================
         spec
@@ -71,7 +73,7 @@ public class ScenarioSingleTests {
         OrderResponse orderResponse = spec
                 .body(orderRequest)
                 .auth()
-                .oauth2(response.getAccessToken())
+                .oauth2(clientResponse.getAccessToken())
                 .when()
                 .post("/orders")
                 .then()
@@ -79,12 +81,12 @@ public class ScenarioSingleTests {
                 .body("created", Matchers.equalTo(true))
                 .extract()
                 .as(OrderResponse.class);
-        System.out.println(response);
+        System.out.println(clientResponse);
 
         // ========= Get All book orders ===============================================================================
         Response allBookOrders = spec
                 .auth()
-                .oauth2(response.getAccessToken())
+                .oauth2(clientResponse.getAccessToken())
                 .when()
                 .get("/orders");
         allBookOrders.then()
@@ -101,7 +103,7 @@ public class ScenarioSingleTests {
 
         Response updatingOrder = spec
                 .auth()
-                .oauth2(response.getAccessToken())
+                .oauth2(clientResponse.getAccessToken())
                 .body(newOrderRequest)
                 .when()
                 .patch("/orders/" + orderResponse.getOrderId());
@@ -111,7 +113,7 @@ public class ScenarioSingleTests {
         // ========= Check order updated ===============================================================================
         Response checkingUpdatedOrder = spec
                 .auth()
-                .oauth2(response.getAccessToken())
+                .oauth2(clientResponse.getAccessToken())
                 .pathParam("orderId", orderResponse.getOrderId())
                 .when()
                 .get("/orders/{orderId}");
@@ -123,7 +125,7 @@ public class ScenarioSingleTests {
         // ========= Delete order ======================================================================================
         Response deletingOrder = spec
                 .auth()
-                .oauth2(response.getAccessToken())
+                .oauth2(clientResponse.getAccessToken())
                 .pathParam("orderId", orderResponse.getOrderId())
                 .when()
                 .delete("/orders/{orderId}");
