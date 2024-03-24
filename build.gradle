@@ -10,8 +10,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.2')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation platform('org.junit:junit-bom:5.10.2')
+    implementation 'org.junit.jupiter:junit-jupiter'
+
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.10.2'
 
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.4.0'
     implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.4.0'
@@ -27,5 +29,10 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() {
+//        includeTags 'Smoke'
+//        includeTags 'AccountServiceTest'
+//        systemProperty 'junit.jupiter.execution.parallel.enabled', 'true'
+//        systemProperty 'junit.jupiter.execution.parallel.mode.default', 'concurrent'
+    }
 }

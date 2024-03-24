@@ -7,8 +7,9 @@ import ru.alfabank.service.Calculator;
 public class FirstTaskTest {
 
     // Напишите тесты для класса Calculator
-    // В 4х тестах используйте @Test
-    Calculator calculator = new Calculator();
+    // В 4-х тестах используйте @Test
+
+    private final Calculator calculator = new Calculator();
 
     @Test
     void shouldAddNumbers() {
@@ -17,6 +18,7 @@ public class FirstTaskTest {
 
     @Test
     void shouldSubtractNumbers() {
+
         Assertions.assertEquals(calculator.subtract(3, 2), 1);
     }
 
@@ -27,6 +29,7 @@ public class FirstTaskTest {
 
     @Test
     void shouldDivideNumbers() {
+
         Assertions.assertEquals(calculator.subtract(4, 2), 2);
     }
 }

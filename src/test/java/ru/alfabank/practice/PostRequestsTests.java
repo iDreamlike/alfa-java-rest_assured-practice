@@ -3,10 +3,6 @@ package ru.alfabank.practice;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
-import ru.alfabank.practice.BookRequest;
-import ru.alfabank.practice.BookResponse;
-import ru.alfabank.practice.ClientRequest;
-import ru.alfabank.practice.ClientResponse;
 
 public class PostRequestsTests {
 

@@ -1,21 +1,24 @@
 package ru.alfabank.practice3;
 
 import org.junit.jupiter.api.*;
+import ru.alfabank.annotations.AccountServiceTest;
 import ru.alfabank.service.AccountService;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@AccountServiceTest
 public class ThirdTaskTest {
 
     // Создайте три теста для класса AccountService
-    // Перед каждым тестом создавайте экземпляр AccountService, а после каждого удаляйте
+    // Перед каждым тестом создавайте экземпляр AccountService, а после каждого удаляйте.
     // Задайте порядок тестов(3, 1, 2)
-    // Укажите 2 теста с тегом Smoke и запустите только их
+    // Укажите 2 теста с тегом Smoke и запустите только их.
     // Создайте мета-аннотацию AccountServiceTest, которая будет включать в себя только тесты из этого класса
 
     AccountService accountService;
 
     @BeforeEach
     void init() {
-        AccountService accountService = new AccountService();
+        accountService = new AccountService();
     }
 
     @Test
