@@ -27,9 +27,9 @@ public class SecondTaskTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/csvFileSubtract.csv")
+    @CsvFileSource(resources = "/csvFileAdd.csv")
     void shouldAddNumbersByCsvFileSource(double num1, double num2, double result) {
-        Assertions.assertEquals(num1 - num2, result);
+        Assertions.assertEquals(num1 + num2, result);
     }
 
     @ParameterizedTest
